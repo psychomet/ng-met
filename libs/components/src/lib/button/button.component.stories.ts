@@ -11,6 +11,12 @@ export default {
       declarations: [ButtonComponent],
     })
   ],
+  argTypes: {
+    color: {
+      options: ['primary' , 'accent' , 'warn' , undefined],
+      control: { type: 'radio' },
+    },
+  },
 } as Meta<ButtonComponent>;
 
 const Template: Story<ButtonComponent> = (args: ButtonComponent) => ({
@@ -21,5 +27,12 @@ const Template: Story<ButtonComponent> = (args: ButtonComponent) => ({
 
 export const Primary = Template.bind({});
 Primary.args = {
-  ...Primary.args
+  ...Primary.args,
+  color: 'primary'
+}
+
+export const Accent = Template.bind({});
+Accent.args = {
+  ...Accent.args,
+  color: 'accent'
 }

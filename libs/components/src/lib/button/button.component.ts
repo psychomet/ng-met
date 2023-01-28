@@ -1,6 +1,7 @@
-import { Component, NgModule, Output } from '@angular/core';
+import { Component, Input, NgModule, OnChanges, Output, SimpleChange, SimpleChanges } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { EventEmitter } from 'stream';
+export type ThemePalette = 'primary' | 'accent' | 'warn' | undefined;
 
 @Component({
   selector: 'button[met-button], a[met-button]',
@@ -8,11 +9,14 @@ import { EventEmitter } from 'stream';
   styleUrls: ['./button.component.scss'],
   host: {
     class:
-      'inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 bg-gray-900 rounded-lg hover:bg-gray-800 focus:shadow-outline focus:outline-none',
+      'btn',
+      '[class.btn-primary]': `color === 'primary'`,
+      '[class.btn-secondary]': `color === 'accent'`
   },
 
 })
-export class ButtonComponent {
+export class ButtonComponent implements OnChanges {
+  @Input() color: ThemePalette = 'primary';
  
   // @Output() clickEvent = new EventEmitter();
 
@@ -20,6 +24,12 @@ export class ButtonComponent {
   //   console.log('e',e);
   //   this.clickEvent.emit(e)
   // }
+
+  ngOnChanges(changes: SimpleChanges){
+    console.log('color',this.color);
+    
+    console.log('changes',changes)
+  }
 
 }
 
