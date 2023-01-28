@@ -1,14 +1,17 @@
 // also exported from '@storybook/angular' if you can deal with breaking changes in 6.1
 import { Story, Meta, moduleMetadata } from '@storybook/angular';
 import { ProgressSpinnerComponent } from './progress-spinner.component';
-import { MatProgressSpinnerModule} from "@angular/material/progress-spinner";
+import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
+import {CommonModule} from "@angular/common";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 
 export default {
   title: 'Angular Material/ProgressSpinner',
   component: ProgressSpinnerComponent,
   decorators: [
     moduleMetadata({
-      imports: [MatProgressSpinnerModule],
+      declarations: [],
+      imports: [CommonModule, BrowserAnimationsModule, MatProgressSpinnerModule],
     }),
   ],
   argTypes: {

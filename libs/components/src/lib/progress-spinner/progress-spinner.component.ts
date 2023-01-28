@@ -1,19 +1,19 @@
-import { Component, Input, OnInit } from '@angular/core';
+import {Component, Input, NgModule} from '@angular/core';
 import { ThemePalette } from '@angular/material/core';
 import { ProgressSpinnerMode } from '@angular/material/progress-spinner';
+import {CommonModule} from "@angular/common";
 
 @Component({
   // eslint-disable-next-line @angular-eslint/component-selector
-  selector: 'app-progress-spinner',
+  selector: 'met-progress-spinner',
   templateUrl: './progress-spinner.component.html',
   styleUrls: ['./progress-spinner.component.css']
 })
-export class ProgressSpinnerComponent implements OnInit {
+export class ProgressSpinnerComponent  {
 
   constructor() { }
 
-  ngOnInit(): void {
-  }
+
 
   /**
    * ProgressBar mode - 'determinate' | 'indeterminate'
@@ -40,3 +40,9 @@ export class ProgressSpinnerComponent implements OnInit {
   color: ThemePalette = 'primary';
 
 }
+@NgModule({
+  imports: [CommonModule],
+  declarations: [ProgressSpinnerComponent],
+  exports: [ProgressSpinnerComponent],
+})
+export class ProgressSpinnerComponentModule {}

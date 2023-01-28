@@ -1,19 +1,20 @@
-import { Component, Input, OnInit } from '@angular/core';
+import {Component, Input, NgModule} from '@angular/core';
 import { ThemePalette } from '@angular/material/core';
 import { ProgressBarMode } from '@angular/material/progress-bar';
+import {CommonModule} from "@angular/common";
 
 @Component({
-  selector: 'app-progress-bar',
+  selector: 'met-progress-bar',
   templateUrl: './progress-bar.component.html',
   styleUrls: ['./progress-bar.component.css']
 })
-export class ProgressBarComponent implements OnInit {
+export class ProgressBarComponent  {
 
+  // eslint-disable-next-line @typescript-eslint/no-empty-function
   constructor() { }
 
-  ngOnInit(): void {
-  }
- 
+
+
   /**
    * ProgressBar mode - determinate | indeterminate | Buffer | Query
    */
@@ -39,3 +40,9 @@ export class ProgressBarComponent implements OnInit {
   color: ThemePalette = 'primary';
 
 }
+@NgModule({
+  imports: [CommonModule],
+  declarations: [ProgressBarComponent],
+  exports: [ProgressBarComponent],
+})
+export class ProgressBarComponentModule {}

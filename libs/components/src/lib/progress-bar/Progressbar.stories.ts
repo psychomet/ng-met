@@ -1,14 +1,17 @@
 // also exported from '@storybook/angular' if you can deal with breaking changes in 6.1
 import { Story, Meta, moduleMetadata } from '@storybook/angular';
 import { ProgressBarComponent } from './progress-bar.component';
-import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { MatProgressBarModule} from '@angular/material/progress-bar';
+import {CommonModule} from "@angular/common";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 
 export default {
   title: 'Angular Material/Progressbar',
   component: ProgressBarComponent,
   decorators: [
     moduleMetadata({
-      imports: [MatProgressBarModule],
+      declarations: [],
+      imports: [CommonModule, BrowserAnimationsModule, MatProgressBarModule],
     }),
   ],
   argTypes: {
