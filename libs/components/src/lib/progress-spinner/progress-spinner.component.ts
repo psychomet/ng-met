@@ -1,6 +1,6 @@
 import {Component, Input, NgModule} from '@angular/core';
 import { ThemePalette } from '@angular/material/core';
-import { ProgressSpinnerMode } from '@angular/material/progress-spinner';
+import {MatProgressSpinnerModule, ProgressSpinnerMode} from '@angular/material/progress-spinner';
 import {CommonModule} from "@angular/common";
 
 @Component({
@@ -41,7 +41,7 @@ export class ProgressSpinnerComponent  {
 
 }
 @NgModule({
-  imports: [CommonModule],
+  imports: [CommonModule, MatProgressSpinnerModule],
   declarations: [ProgressSpinnerComponent],
   exports: [ProgressSpinnerComponent],
 })
