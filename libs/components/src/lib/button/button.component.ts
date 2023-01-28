@@ -7,6 +7,7 @@ export type ThemePalette = 'primary' | 'accent' | 'warn' | undefined;
   selector: 'button[met-button], a[met-button]',
   templateUrl: './button.component.html',
   styleUrls: ['./button.component.scss'],
+  standalone: true,
   host: {
     class:
       'btn',
@@ -32,10 +33,3 @@ export class ButtonComponent implements OnChanges {
   }
 
 }
-
-@NgModule({
-  imports: [CommonModule],
-  declarations: [ButtonComponent],
-  exports: [ButtonComponent],
-})
-export class ButtonComponentModule {}

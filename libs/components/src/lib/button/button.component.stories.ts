@@ -7,8 +7,7 @@ export default {
   component: ButtonComponent,
   decorators: [
     moduleMetadata({
-      imports: [CommonModule],
-      declarations: [ButtonComponent],
+      imports: [CommonModule, ButtonComponent],
     })
   ],
   argTypes: {
@@ -21,18 +20,29 @@ export default {
 
 const Template: Story<ButtonComponent> = (args: ButtonComponent) => ({
   props: args,
-  template: `<button met-button><span>test</span></button>`,
+  template: `<button met-button [color]="color"><span>test</span></button>`,
 });
 
-
-export const Primary = Template.bind({});
-Primary.args = {
-  ...Primary.args,
-  color: 'primary'
+export const Basic = Template.bind({});
+Basic.args = {
+  ...Basic.args
 }
 
-export const Accent = Template.bind({});
-Accent.args = {
-  ...Accent.args,
-  color: 'accent'
+export const Raised = Template.bind({});
+Raised.args = {
+  ...Raised.args
 }
+
+
+
+// export const Primary = Template.bind({});
+// Primary.args = {
+//   ...Primary.args,
+//   color: 'primary'
+// }
+
+// export const Accent = Template.bind({});
+// Accent.args = {
+//   ...Accent.args,
+//   color: 'accent'
+// }
